@@ -1,4 +1,6 @@
 import React from 'react';
+import ProfileContentCard from '../components/cards/ProfileContentCard';
+import StatisticCard from '../components/others/StatisticCard';
 
 const Profile = () => {
   return (
@@ -52,36 +54,9 @@ const Profile = () => {
         <div className="px-6 py-10 flex flex-col lg:flex-row gap-12">
           {/* Main Content Area: Posts */}
           <div className="flex-1 space-y-10">
-            {[1, 2].map((post) => (
+            {[1, 2,3,4,5,6,7,8,9].map((post) => (
               <React.Fragment key={post}>
-                <article className="group grid md:grid-cols-3 gap-6">
-                  <div className="md:col-span-2 flex flex-col justify-center">
-                    <div className="flex items-center gap-2 mb-3 font-sans text-xs uppercase tracking-widest text-[#0d7ff2] font-bold">
-                      <span>Design Philosophy</span>
-                      <span className="w-1 h-1 rounded-full bg-slate-500"></span>
-                      <span className="text-slate-500">Dec 14, 2023</span>
-                    </div>
-                    <h3 className="text-2xl md:text-3xl font-bold leading-tight group-hover:text-[#0d7ff2] transition-colors cursor-pointer mb-3">
-                      The invisible architecture of digital stillness.
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-4 line-clamp-2">
-                      Why modern interfaces are failing our focus, and how we can design for contemplative spaces rather than transactional speed.
-                    </p>
-                    <div className="flex items-center justify-between mt-auto text-slate-500 text-xs font-sans">
-                      <div className="flex gap-4">
-                        <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">schedule</span> 8 min read</span>
-                        <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">visibility</span> 4.2k views</span>
-                      </div>
-                      <button className="hover:text-[#0d7ff2] transition-colors">
-                        <span className="material-symbols-outlined">bookmark_add</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div className="h-48 rounded-xl overflow-hidden bg-slate-800">
-                    <img src={`https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post thumbnail" />
-                  </div>
-                </article>
-                <hr className="border-slate-200 dark:border-slate-800"/>
+                <ProfileContentCard/>
               </React.Fragment>
             ))}
           </div>
@@ -89,35 +64,9 @@ const Profile = () => {
           {/* Sidebar */}
           <aside className="lg:w-80 flex flex-col gap-8">
             {/* Statistics Card */}
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm">
-              <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-slate-400 mb-6 font-sans">Performance Metrics</h4>
-              <div className="space-y-6">
-                <div className="flex justify-between items-end border-b border-slate-100 dark:border-slate-800 pb-4">
-                  <div>
-                    <p className="text-3xl font-bold">142k</p>
-                    <p className="text-xs text-slate-500 font-sans">Total Reads</p>
-                  </div>
-                  <span className="material-symbols-outlined text-[#0d7ff2] text-xl">auto_graph</span>
-                </div>
-                <div className="flex justify-between items-end border-b border-slate-100 dark:border-slate-800 pb-4">
-                  <div>
-                    <p className="text-3xl font-bold">12.8k</p>
-                    <p className="text-xs text-slate-500 font-sans">Followers</p>
-                  </div>
-                  <span className="material-symbols-outlined text-[#0d7ff2] text-xl">group</span>
-                </div>
-              </div>
-            </div>
+           <StatisticCard/>
 
-            {/* Featured Collection */}
-            <div className="bg-[#0d7ff2]/5 rounded-xl p-6 border border-[#0d7ff2]/20">
-              <h4 className="text-xs font-bold text-[#0d7ff2] mb-3 uppercase tracking-widest font-sans">Top Series</h4>
-              <p className="font-bold text-lg leading-snug mb-3">Minimalism & Intent: A 12-Part Exploration</p>
-              <a className="text-[#0d7ff2] text-xs font-bold font-sans flex items-center gap-1 group" href="#">
-                Explore Series 
-                <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </a>
-            </div>
+            
           </aside>
         </div>
       </main>
