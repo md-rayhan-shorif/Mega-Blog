@@ -1,4 +1,5 @@
 import React from 'react';
+import PostCard from '../components/cards/PostCard';
 
 const AllPost = () => {
   return (
@@ -40,27 +41,7 @@ const AllPost = () => {
           
           {/* Post Card Component (Repeatable) */}
           {[1, 2, 3, 4, 5, 6].map((post) => (
-            <article key={post} className="group">
-              <div className="bg-white border border-slate-100 dark:bg-slate-900/40 dark:border-white/5 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(37,99,235,0.08)] dark:hover:shadow-[0_20px_50px_rgba(255,255,255,0.03)] rounded-3xl overflow-hidden flex flex-col h-full">
-                <div className="relative h-64 overflow-hidden">
-                  <img alt="Post cover" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src={`https://images.unsplash.com/photo-${1500000000000 + post}?q=80&w=800`} />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-white/90 dark:bg-black/50 backdrop-blur-md text-[10px] font-bold uppercase tracking-widest text-slate-900 dark:text-white">Mindset</span>
-                  </div>
-                </div>
-                <div className="p-8 flex-1 flex flex-col">
-                  <h2 className="font-serif text-2xl mb-3 leading-tight group-hover:text-[#2563eb] transition-colors">The Power of Consistency in a Fast World</h2>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-3">Success isn't always about greatness. It's about consistency. Consistent hard work leads to success.</p>
-                  <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800"></div>
-                      <span className="text-xs font-medium text-slate-700 dark:text-slate-300">Marcus Thorne</span>
-                    </div>
-                    <span className="text-[11px] text-slate-400 font-medium uppercase tracking-tighter">Oct 24, 2023</span>
-                  </div>
-                </div>
-              </div>
-            </article>
+          <PostCard/>
           ))}
         </div>
 
