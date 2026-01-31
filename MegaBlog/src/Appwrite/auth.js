@@ -5,6 +5,7 @@ export class AuthService {
     client = new Client();
     account;
     databases;
+    
 
     constructor() {
         this.client
@@ -55,6 +56,14 @@ export class AuthService {
         }
     }
 
+    async logout() {
+    try {
+        await this.account.deleteSession('current');
+    } catch (error) {
+        console.log("Appwrite service :: logout :: error", error);
+    }
+}
+
     async getUserProfile(userId){
         try {
             return await this.databases.getDocument(
@@ -67,15 +76,19 @@ export class AuthService {
         return null;
         }
     }
+    // ! pore eta niye kaj korbo. eta profile show korar jonno. navbar e
+    // getFilePreview(fileId){
+    //     return this.
+    // }
 
     async getCurrentUser() {
-        try {
-            return await this.account.get();
-        } catch (error) {
-            console.log("Appwrite service :: getCurrentUser :: error", error);
-        }
-        return null;
+    try {
+        return await this.account.get();
+    } catch (error) {
+        console.log("Appwrite service :: getCurrentUser :: error", error);
     }
+    return null;
+}
 }
 
 const authService = new AuthService();
